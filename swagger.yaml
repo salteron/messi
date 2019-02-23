@@ -1,0 +1,54 @@
+swagger: '2.0'
+info:
+  version: 0.0.0
+  title: messi
+  description: gently forwards your messeges to /dev/null
+host: 'localhost:3000'
+consumes: 
+  - "application/json"
+produces: 
+  - "application/json"
+schemes:
+  - http
+paths:
+  /messages:
+    post:
+      parameters: 
+        - name: "message"
+          required: true
+          in: "body"
+          schema:
+            $ref: '#/definitions/Message'
+      summary: create message
+      description: create message
+      responses:
+        '201':
+          description: Created
+        '422':
+          description: Unprocessable Entity
+definitions:
+  Recipient:
+    required:
+      - messenger
+      - messenger_user_id
+    properties:
+      messenger:
+        type: string
+        enum: [telegram]
+      messenger_user_id:
+        type: string
+  Message:
+    required:
+      - text
+      - recipients
+    properties:
+      text:
+        type: string
+      send_at:
+        type: string
+        format: date-time
+      recipients:
+        type: array
+        items:
+          $ref: '#/definitions/Recipient'
+        minItems: 1

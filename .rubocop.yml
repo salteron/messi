@@ -1,0 +1,19 @@
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Include:
+    - '*/**/*.rb'
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStyles:
+    - space
+    - no_space
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

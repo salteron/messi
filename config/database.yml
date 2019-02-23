@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV.fetch('DATABASE_URL')%>
+
+development:
+  <<: *default
+  database: messi_development
+
+test:
+  <<: *default
+  database: messi_test

@@ -1,0 +1,8 @@
+sidekiq:
+  redis:
+    host: <%= ENV.fetch('REDIS_HOST', 'localhost') %>
+    port: 6379
+  client:
+    pool: 5
+  server:
+    pool: 25
