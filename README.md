@@ -1,3 +1,6 @@
+Проект является решением тестового задания, сформулированного в
+[TASK.md](./TASK.md).
+
 # Requirements
 
 - [docker](https://www.docker.io/)
