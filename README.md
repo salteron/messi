@@ -1,5 +1,4 @@
-Проект является решением тестового задания, сформулированного в
-[TASK.md](./TASK.md).
+The project is a solution to a test assignment formulated in [TASK.md](./TASK.md).
 
 # Requirements
 
@@ -14,8 +13,7 @@
 
 # API
 
-Описание на swagger в `swagger.yaml`. Можно открыть при помощи
-[онлайн-редактора](https://editor.swagger.io/).
+The description is available in the Swagger file `swagger.yaml`. It can be opened using the [online editor](https://editor.swagger.io/).
 
 ##### Example
 ```
@@ -33,17 +31,14 @@ curl --request POST \
 }'
 ```
 
-# Гемы и инструменты
+# Gems and Tools
 
-Отправка сообщений осуществляется в фоне, чтобы обеспечить отзывчивость
-приложения. Для каждого получателя сообщения ставится отдельный джоб, что
-обеспечивает независимую доставку.
+Message sending is performed in the background to ensure application responsiveness. A separate job is created for each message recipient, ensuring independent delivery.
 
-Заиспользован sidekiq, т.к.
-- параллелит задачи на потоки, что эффективно в случае IO-heavy (как в нашем
-  случае) задач;
-- из коробки реализует требования по ретраю и отложенному выполнению задач.
+I utilize Sidekiq because it:
+- parallelizes tasks onto threads, which is efficient for IO-heavy tasks like ours;
+- implements requirements for task retry and deferred execution out of the box.
 
-Исключительно для удовлетворения требования глобальной уникальности
-<текст, получатель> подключена база данных. Запоминать в `sidekiq.redis` можно,
-но не так эффективно и надежно.
+A database is integrated solely to satisfy the requirement of global uniqueness
+for <text, recipient> pairs. Storing in `sidekiq.redis` is possible but not as
+efficient and reliable.

@@ -1,16 +1,24 @@
-Ваша задача: создать прототип микросервиса, обеспечивающий эмуляцию отправки сообщений в популярные месседжеры (Viber, Telegram, WhatsApp).
+Your task is to create a prototype microservice that emulates sending messages
+to popular messengers (Viber, Telegram, WhatsApp).
 
-Приложение должно обладать следующим функционалом: 
-* прием сообщений по API и отправка их в мессенджеры (с указанием идентификатора пользователя для каждого мессенджера); 
-* возможность отложенной отправки сообщений по дате/времени; 
-* в случае неудачной отправки сообщения, нужно повторить попытку N-ое количество раз, но это не должно влиять на доставляемость других сообщений; 
-* исключение возможности многократной отправки одного и того же сообщения (с одним и тем же содержимым) одному получателю; 
-* возможность отправки одного сообщения нескольким получателям на несколько мессенджеров в рамках одного запроса; 
-  
-**Важно**: нужно сделать именно эмуляцию отправки, непосредственную интеграцию с
-мессенджерами делать не нужно. 
+The application should have the following functionality:
+* Receive messages via API and send them to messengers (with user identifiers
+  specified for each messenger).
+* Ability to schedule message delivery by date/time.
+* In case of unsuccessful message delivery, retry a certain number of times, but
+  this should not affect the delivery of other messages.
+* Prevent multiple sending of the same message (with identical content) to the
+  same recipient.
+* Ability to send one message to multiple recipients across multiple messengers
+  within one request.
 
-Параметры запроса должны проходить валидацию (требования валидации на ваше
-усмотрение). 
+**Important**: It is necessary to emulate message sending; direct integration
+with messengers is not required.
 
-Задание нужно выполнить на Ruby on Rails и прислать его нам вместе с README, в котором должна быть инструкция по развертыванию/запуску и описание API-запросов. Использование дополнительных гемов и инструментов — на вашей совести, однако выбор необходимо будет обосновать там же в README.
+Request parameters should undergo validation (validation requirements are at
+your discretion).
+
+The task should be implemented in Ruby on Rails and sent to us along with a
+README, which should contain deployment/launch instructions and API request
+descriptions. The use of additional gems and tools is at your discretion, but
+the choice must be justified in the README.
